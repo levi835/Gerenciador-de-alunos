@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../htmlk25"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "htmlk25"
+	}
+}

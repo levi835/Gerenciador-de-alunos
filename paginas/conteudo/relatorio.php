@@ -24,7 +24,7 @@
                     <th style="width: 5%; text-align:center">#</th>
                     <th style="text-align:center">Foto</th>
                     <th>Nome</th>
-                    <th style="text-align:left">Telefone</th>
+                    <th style="text-align:center">Telefone</th>
                     <th>E-mail</th>
                     <th>Ações</th>
                   </tr>
