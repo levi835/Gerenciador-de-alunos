@@ -22,7 +22,7 @@ include_once('sair.php');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Agenda Eletrônica</title>
+  <title>Gerenciamento de Alunos</title>
   <!-- DataTables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.1.1/css/buttons.dataTables.css">
@@ -127,7 +127,7 @@ try {
           </a>
           <div class="dropdown-divider"></div>
           <a href="?sair" class="dropdown-item">
-          <i class="fas fa-sign-out-alt mr-2"></i> Sair da Agenda
+          <i class="fas fa-sign-out-alt mr-2"></i> Sair 
             
           </a>
           
@@ -145,7 +145,7 @@ try {
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">Agenda Eletrônica</span>
+      <span class="brand-text font-weight-light">Gerenciamento de Alunos</span>
     </a>
 
     <!-- Sidebar -->
@@ -187,7 +187,7 @@ try {
             <a href="home.php?acao=relatorio" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Relatório
+                Imprimir relatório
                 
               </p>
             </a>

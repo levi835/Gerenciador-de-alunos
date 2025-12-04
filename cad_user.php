@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>New Agenda 2.0 | Cadastro de Usuário</title>
+  <title></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,7 +26,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Cadastre todos os dados para ter acesso a agenda</p>
+      <p class="login-box-msg">Cadastre todos os dados para ter acesso ao gerenciador de alunos</p>
 
       <form action="" method="post" enctype="multipart/form-data">
       <div class="form-group">
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Digite seu E-mail..." required>
+          <input type="text" name="matricula" class="form-control" placeholder="Digite seu email..." required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -82,7 +82,7 @@ include_once('config/conexao.php'); // Inclui o arquivo de conexão com o banco 
 if (isset($_POST['botao'])) {
     // Recebe os dados do formulário
     $nome = $_POST['nome'];
-    $email = $_POST['email'];
+    $email = $_POST['matricula'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); // Usando hash seguro para a senha
 
     // Verifica se foi enviado algum arquivo de foto
@@ -135,16 +135,20 @@ if (isset($_POST['botao'])) {
         $result->bindParam(':foto', $novoNome, PDO::PARAM_STR);
         $result->execute();
         $contar = $result->rowCount();
+        $id_user = $conect->lastInsertId();
 
         if ($contar > 0) {
-            echo '<div class="container">
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-check"></i> OK!</h5>
-                        Dados inseridos com sucesso !!!
-                    </div>
-                </div>';
-        } else {
+    $id_user = $conect->lastInsertId();
+
+    echo '<div class="container">
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> OK!</h5>
+                Dados inseridos com sucesso!<br>
+                Novo usuario cadastrado!
+            </div>
+        </div>';
+} else {
             echo '<div class="container">
                     <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

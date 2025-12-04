@@ -82,3 +82,5 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-08-23 10:17:35
+ALTER TABLE tb_contatos 
+ADD COLUMN matricula_contatos VARCHAR(50) NOT NULL;

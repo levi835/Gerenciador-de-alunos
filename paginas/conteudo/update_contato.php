@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Editar Contato</h1>
+            <h1>Editar Dados do Aluno</h1>
           </div>
           
         </div>
@@ -63,7 +63,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">editar contato</h3>
+                <h3 class="card-title">Editar Dados</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -83,7 +83,7 @@
                   </div>
                   
                   <div class="form-group">
-                    <label for="exampleInputFile">Foto do contato</label>
+                    <label for="exampleInputFile">Foto do </label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" name="foto" id="foto">
@@ -180,7 +180,7 @@
               <div class="card-body p-0" style="text-align: center; margin-bottom: 98px">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Dados do Contatos</h3>
+                  <h3 class="card-title">Dados do Aluno</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body p-0" style="text-align: center; margin-bottom: 98px">

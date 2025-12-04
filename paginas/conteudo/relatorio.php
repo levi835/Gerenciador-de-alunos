@@ -14,7 +14,7 @@
         
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Lista de contatos</h3>
+                <h3 class="card-title">Lista de Alunos</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -25,6 +25,8 @@
                     <th style="text-align:center">Foto</th>
                     <th>Nome</th>
                     <th style="text-align:center">Telefone</th>
+                    <th style="text-align:center">Matrícula</th>
+
                     <th>E-mail</th>
                     <th>Ações</th>
                   </tr>
@@ -65,6 +67,8 @@
                      </td>
                      <td><?php echo $show->nome_contatos; ?></td>
                      <td><?php echo $show->fone_contatos; ?></td>
+                     <td><?php echo $show->matricula_contatos; ?></td>
+
                      <td><?php echo $show->email_contatos; ?></td>
                       
                       <td>
@@ -86,22 +90,9 @@
               echo '<strong>ERRO DE PDO= </strong>' . $e->getMessage();
           }
           
-                   ?>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>#</th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>E-mail</th>
-                    <th>Ações</th>
-                  </tr>
-                  </tfoot>
+                   ?>                  
                 </table>
-                <div class="col-lg-12 d-flex justify-content-center">
-                  <a href="conteudo/relatoriopdf.php?id=<?php echo $id_user;?>" class="btn btn-lg btn-primary">Gerar relatório completo</a>
-                </div>
+               
                 </div>
               <!-- /.card-body -->
             </div>

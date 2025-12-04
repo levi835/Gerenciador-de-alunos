@@ -1,9 +1,9 @@
-<?php
+  <?php
 // Definindo as constantes para a conexão com o banco de dados
 if (!defined('DB_CONFIG')) {
     define('DB_CONFIG', [
         'host' => 'localhost',
-        'dbname' => 'agendajmf_2025',
+        'dbname' => 'new_agenda_2024',
         'user' => 'root',
         'pass' => 'bdjmf'
     ]);

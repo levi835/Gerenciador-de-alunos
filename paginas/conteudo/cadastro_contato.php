@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Cadastro de Contatos</h1>
+            <h1>Cadastro de Alunos</h1>
           </div>
           
         </div>
@@ -21,7 +21,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Cadastrar contato</h3>
+                <h3 class="card-title">Cadastrar Aluno</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -36,12 +36,16 @@
                     <input type="text" class="form-control" name="telefone" id="telefone" required placeholder="(00) 00000-0000">
                   </div>
                   <div class="form-group">
+                    <label for="exampleInputPassword1">Matrícula</label>
+                    <input type="text" class="form-control" name="matricula" id="matricula" required placeholder="0000000000">
+                  </div>
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Endereço de E-mail</label>
                     <input type="email" class="form-control" name="email" id="email" required placeholder="Digite um e-mail">
                   </div>
                   
                   <div class="form-group">
-                    <label for="exampleInputFile">Foto do contato</label>
+                    <label for="exampleInputFile">Foto do Aluno</label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" name="foto" id="foto">
@@ -59,7 +63,7 @@
                   </div>
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-                    <label class="form-check-label" for="exampleCheck1">Autorizo o cadastro do meu contato</label>
+                    <label class="form-check-label" for="exampleCheck1">Autorizo o cadastro</label>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -78,6 +82,7 @@
                     $nome = $_POST['nome'];
                     $telefone = $_POST['telefone'];
                     $email = $_POST['email'];
+                    $matricula = $_POST['matricula'];
                     $id_usuario = $_POST['id_user'];
                 
                     // Define os formatos de imagem permitidos
@@ -115,14 +120,16 @@
                     }
                   
                     // Prepara a consulta SQL para inserir os dados no banco de dados
-                    $cadastro = "INSERT INTO tb_contatos (nome_contatos, fone_contatos, email_contatos, foto_contatos, id_user) VALUES (:nome, :telefone, :email, :foto, :id_user)";
-                  
+                    $cadastro = "INSERT INTO tb_contatos (nome_contatos, fone_contatos, email_contatos,matricula_contatos,
+ foto_contatos, id_user) VALUES (:nome, :telefone, :email, :matricula, :foto, :id_user)";
+                                    
                     try {
                         // Prepara a consulta SQL com os parâmetros
                         $result = $conect->prepare($cadastro);
                         $result->bindParam(':nome', $nome, PDO::PARAM_STR);
                         $result->bindParam(':telefone', $telefone, PDO::PARAM_STR);
                         $result->bindParam(':email', $email, PDO::PARAM_STR);
+                        $result->bindParam(':matricula', $matricula, PDO::PARAM_STR);
                         $result->bindParam(':foto', $foto, PDO::PARAM_STR);
                         $result->bindParam(':id_user', $id_usuario, PDO::PARAM_INT); // Adicionando o id_usuario
                     
@@ -164,7 +171,7 @@
             <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Contatos Recentes</h3>
+                <h3 class="card-title">Alunos Cadastrados Recentemente</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -174,6 +181,7 @@
                       <th style="width: 10px">#</th>
                       <th>Nome</th>
                       <th>Telefone</th>
+                      <th>Matrícula</th>
                       <th>E-mail</th>
                       <th style="width: 40px">Ações</th>
                     </tr>
@@ -203,6 +211,7 @@
                     <td><?php echo $cont++; ?></td>
                     <td><?php echo $show->nome_contatos; ?></td>
                     <td><?php echo $show->fone_contatos; ?></td>
+                    <td><?php echo $show->matricula_contatos; ?></td>
                     <td><?php echo $show->email_contatos; ?></td>
                     <td>
                         <div class="btn-group">
